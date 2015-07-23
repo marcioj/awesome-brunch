@@ -1,3 +1,9 @@
+module.exports.getMessage = getMessage;
+
 module.exports.init = function () {
-  document.writeln('Hello world');
+  document.writeln(getMessage());
+}
+
+function getMessage() {
+  return 'Hello world';
 }

@@ -2,7 +2,9 @@ exports.config =
   # See http://brunch.io/#documentation for docs.
   files:
     javascripts:
-      joinTo: 'app.js'
+      joinTo:
+        'app.js': /^app/
+        'tests.js': /^test/
     stylesheets:
       joinTo: 'app.css'
     templates:

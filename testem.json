@@ -1,0 +1,14 @@
+{
+  "framework": "mocha+chai",
+  "test_page": "test/index.mustache",
+  "src_files": [
+    "public/*.js"
+  ],
+  "launch_in_ci": [
+    "PhantomJS"
+  ],
+  "launch_in_dev": [
+    "PhantomJS",
+    "Chrome"
+  ]
+}
