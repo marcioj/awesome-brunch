@@ -3,18 +3,26 @@
 <head>
 <title>Test'em</title>
 <link rel="stylesheet" href="/testem/mocha.css">
+{{#serve_files}}<script src="/{{{src}}}"{{#attrs}} {{&.}}{{/attrs}}></script>{{/serve_files}}
 <script src="/testem/mocha.js"></script>
 <script src="/testem/chai.js"></script>
 <script src="/testem.js"></script>
 <script>mocha.setup('bdd')</script>
-{{#serve_files}}<script src="/{{{src}}}"{{#attrs}} {{&.}}{{/attrs}}></script>{{/serve_files}}
 <script>
+  require.register('chai', function(exports, require, module) {
+    exports.expect = window.chai.expect;
+  });
+
+  require.register('mocha', function(exports, require, module) {
+    exports.describe = window.describe;
+    exports.it = window.it;
+  });
+
   require.list().forEach(function (file) {
     if (/-test$/.test(file)) {
       require(file);
     }
   });
-  window.expect = chai.expect;
 </script>
 </head>
 <body>

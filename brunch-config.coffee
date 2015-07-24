@@ -9,3 +9,6 @@ exports.config =
       joinTo: 'app.css'
     templates:
       joinTo: 'app.js'
+  plugins:
+    jshint:
+      pattern: /(^app|^test)/
