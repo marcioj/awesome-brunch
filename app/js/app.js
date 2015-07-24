@@ -1,9 +1,7 @@
-module.exports.getMessage = getMessage;
-
-module.exports.init = function () {
+export default function () {
   document.writeln(getMessage());
 }
 
-function getMessage() {
+export function getMessage() {
   return 'Hello world';
 }
